@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.3.3](https://github.com/tristantheb/mdn-macros-syntax/compare/v0.3.2...v0.3.3) (2025-11-20)
+
+
+### Miscellaneous
+
+* **deps-dev:** bump the development-dependencies group across 1 directory with 5 updates ([#35](https://github.com/tristantheb/mdn-macros-syntax/issues/35)) ([4e425a4](https://github.com/tristantheb/mdn-macros-syntax/commit/4e425a409d4a71302a740e04ed5255aa401b6434))
+* **deps:** bump github/codeql-action from 4.31.0 to 4.31.2 ([#34](https://github.com/tristantheb/mdn-macros-syntax/issues/34)) ([fdfef3e](https://github.com/tristantheb/mdn-macros-syntax/commit/fdfef3e0edc32241ee4ebb019efd95fe1e26aadc))
+* **deps:** bump glob from 10.4.5 to 10.5.0 ([#38](https://github.com/tristantheb/mdn-macros-syntax/issues/38)) ([08642c4](https://github.com/tristantheb/mdn-macros-syntax/commit/08642c422c8bda4603288056b83256e5852a6de6))
+* **deps:** bump js-yaml ([#37](https://github.com/tristantheb/mdn-macros-syntax/issues/37)) ([6788279](https://github.com/tristantheb/mdn-macros-syntax/commit/6788279ebe1cffe2a29f069095d90f3c6e4853ec))
+
 ## [0.3.2](https://github.com/tristantheb/mdn-macros-syntax/compare/v0.3.1...v0.3.2) (2025-10-30)
 
 
