@@ -48,7 +48,6 @@
   "NextMenu": { "description": "'Next' ナビゲーションメニュー要素を表示します。", "params": { "nextPage": "次のリンクの対象ページ (任意)。", "overviewPage": "コンテキスト用の概要ページ (任意)。" } },
   "Non-standard_Header": { "description": "非標準の機能やコンテンツ用のバナーを表示します。", "params": {} },
   "Non-standard_Inline": { "description": "非標準の機能を示すインラインマーカー。", "params": {} },
-  "NonStandardBadge": { "description": "非標準の状態を示すバッジ。", "params": {} },
   "Optional_Inline": { "description": "オプションのプロパティや引数のためのインラインヘルパー。", "params": {} },
   "Previous": { "description": "前のページへのリンクを挿入するナビゲーションヘルパー。", "params": { "previousPage": "'previous' リンクの対象ページまたはスラッグ (任意)。" } },
   "PreviousMenu": { "description": "'Previous' メニュー要素を表示します。", "params": { "previousPage": "前のリンクの対象ページ (任意)。", "overviewPage": "コンテキスト用の概要ページ (任意)。" } },

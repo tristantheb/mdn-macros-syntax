@@ -49,7 +49,6 @@
   "NextMenu": { "description": "Render a 'Next' navigation menu element.", "params": { "nextPage": "Optional target page for the next link.", "overviewPage": "Optional overview page slug for context." } },
   "Non-standard_Header": { "description": "Display a banner for non-standard features or content.", "params": {} },
   "Non-standard_Inline": { "description": "Inline marker for non-standard features.", "params": {} },
-  "NonStandardBadge": { "description": "Badge indicating non-standard status.", "params": {} },
   "Optional_Inline": { "description": "Inline helper for optional properties or arguments.", "params": {} },
   "Previous": { "description": "Navigation helper inserting a link to the previous page.", "params": { "previousPage": "Optional target page or slug for the 'previous' link." } },
   "PreviousMenu": { "description": "Render a 'Previous' navigation menu element.", "params": { "previousPage": "Optional target page for the previous link.", "overviewPage": "Optional overview page slug for context." } },

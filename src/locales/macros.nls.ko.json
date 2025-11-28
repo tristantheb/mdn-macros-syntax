@@ -48,7 +48,6 @@
   "NextMenu": { "description": "'Next' 네비게이션 메뉴 요소를 렌더링합니다.", "params": { "nextPage": "다음 링크의 대상 페이지(선택).", "overviewPage": "문맥을 위한 개요 페이지(선택)." } },
   "Non-standard_Header": { "description": "비표준 기능 또는 콘텐츠에 대한 배너를 표시합니다.", "params": {} },
   "Non-standard_Inline": { "description": "비표준 기능을 나타내는 인라인 표시기입니다.", "params": {} },
-  "NonStandardBadge": { "description": "비표준 상태를 나타내는 배지입니다.", "params": {} },
   "Optional_Inline": { "description": "옵션 속성 또는 인수를 위한 인라인 도우미입니다.", "params": {} },
   "Previous": { "description": "이전 페이지로 연결되는 링크를 삽입하는 네비게이션 도우미입니다.", "params": { "previousPage": "'previous' 링크의 대상 페이지 또는 슬러그(선택)." } },
   "PreviousMenu": { "description": "'Previous' 메뉴 요소를 렌더링합니다.", "params": { "previousPage": "이전 링크의 대상 페이지(선택).", "overviewPage": "문맥을 위한 개요 페이지(선택)." } },

@@ -48,7 +48,6 @@
   "NextMenu": { "description": "呈現 'Next' 導航選單元素。", "params": { "nextPage": "下一個鏈接的目標頁面（可選）。", "overviewPage": "作為上下文的概覽頁（可選）。" } },
   "Non-standard_Header": { "description": "顯示非標準功能或內容的橫幅。", "params": {} },
   "Non-standard_Inline": { "description": "表示非標準功能的內嵌標記。", "params": {} },
-  "NonStandardBadge": { "description": "指示非標準狀態的徽章。", "params": {} },
   "Optional_Inline": { "description": "為可選屬性或參數提供內嵌幫助。", "params": {} },
   "Previous": { "description": "導航輔助，插入到上一頁的連結。", "params": { "previousPage": "'previous' 連結的可選目標頁面或 slug。" } },
   "PreviousMenu": { "description": "呈現 'Previous' 選單元素。", "params": { "previousPage": "上一個連結的目標頁面（可選）。", "overviewPage": "作為上下文的概覽頁（可選）。" } },

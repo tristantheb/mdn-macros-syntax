@@ -48,7 +48,6 @@
   "NextMenu": { "description": "渲染 'Next' 导航菜单元素。", "params": { "nextPage": "'next' 链接的目标页面（可选）。", "overviewPage": "用于上下文的概览页面（可选）。" } },
   "Non-standard_Header": { "description": "显示用于非标准功能或内容的横幅。", "params": {} },
   "Non-standard_Inline": { "description": "用于非标准功能的内联标记。", "params": {} },
-  "NonStandardBadge": { "description": "表示非标准状态的徽章。", "params": {} },
   "Optional_Inline": { "description": "用于可选属性或参数的内联帮助。", "params": {} },
   "Previous": { "description": "导航帮助，插入指向上一页的链接。", "params": { "previousPage": "'previous' 链接的可选目标页面或 slug。" } },
   "PreviousMenu": { "description": "渲染 'Previous' 菜单元素。", "params": { "previousPage": "上一链接的目标页面（可选）。", "overviewPage": "用于上下文的概览页面（可选）。" } },

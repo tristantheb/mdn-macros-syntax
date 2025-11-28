@@ -48,7 +48,6 @@
   "NextMenu": { "description": "Renderiza um elemento de menu 'Next'.", "params": { "nextPage": "Página alvo opcional para o link next.", "overviewPage": "Página de visão geral opcional para contexto." } },
   "Non-standard_Header": { "description": "Exibe um banner para recursos não padronizados.", "params": {} },
   "Non-standard_Inline": { "description": "Marcador inline para recursos não padronizados.", "params": {} },
-  "NonStandardBadge": { "description": "Distintivo indicando estado não padronizado.", "params": {} },
   "Optional_Inline": { "description": "Auxiliar inline para propriedades ou argumentos opcionais.", "params": {} },
   "Previous": { "description": "Auxiliar de navegação que insere um link para a página anterior.", "params": { "previousPage": "Página alvo opcional ou slug para o link 'previous'." } },
   "PreviousMenu": { "description": "Renderiza um elemento de menu 'Previous'.", "params": { "previousPage": "Página alvo opcional para o link anterior.", "overviewPage": "Página de visão geral opcional para contexto." } },
