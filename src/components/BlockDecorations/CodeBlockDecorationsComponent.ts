@@ -46,7 +46,7 @@ class CodeBlockDecorationsComponent extends DecorationComponent {
     while (line < lineCount) {
       const textLine = doc.lineAt(line).text
       if (textLine.trim().startsWith('```')) {
-        const infoString = textLine.trim().substring(3).trim()
+        const infoString = textLine.trim().substring(3)
         // Find the end of the code block
         let endLine = line + 1
         while (endLine < lineCount && !doc.lineAt(endLine).text.trim().startsWith('```')) {
@@ -64,20 +64,20 @@ class CodeBlockDecorationsComponent extends DecorationComponent {
             new vscode.Position(line, 0),
             new vscode.Position(line, 0)
           )
-          const parts = infoString.split(/\s+/).map(p => p.trim()).filter(Boolean)
+          const parts = infoString.split(/\s+/).filter(Boolean)
           for (const part of parts) {
             const key = part.toLowerCase()
-            if (this.KEYWORD_CONFIG[key]) {
-              if (this.KEYWORD_CONFIG[key].color) {
-                const bgKey = `${key}-bg`
-                if (!result[bgKey]) result[bgKey] = []
-                result[bgKey].push(blockRange)
-              }
-              if (this.KEYWORD_CONFIG[key].icon) {
-                const iconKey = `${key}-icon`
-                if (!result[iconKey]) result[iconKey] = []
-                result[iconKey].push(iconRange)
-              }
+            const match = Object.keys(this.KEYWORD_CONFIG).find(
+              k => key === k || key.startsWith(k)
+            )
+            if (match) {
+              const cfg = this.KEYWORD_CONFIG[match]
+              result[`${match}-bg`] = cfg.color
+                ? [...(result[`${match}-bg`] || []), blockRange]
+                : result[`${match}-bg`]
+              result[`${match}-icon`] = cfg.icon
+                ? [...(result[`${match}-icon`] || []), iconRange]
+                : result[`${match}-icon`]
               break
             }
           }
