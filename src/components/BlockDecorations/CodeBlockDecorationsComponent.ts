@@ -10,6 +10,70 @@ class CodeBlockDecorationsComponent extends DecorationComponent {
     'interactive-example': { icon: 'console.svg', color: 'rgb(33 150 243 / 12%)' }
   }
 
+  private defineRange(lineStart: number, colStart: number, lineEnd: number, colEnd: number): vscode.Range {
+    return new vscode.Range(
+      new vscode.Position(lineStart, colStart),
+      new vscode.Position(lineEnd, colEnd)
+    )
+  }
+
+  private findKeyword(infoString: string): string | undefined {
+    const parts = infoString.split(/\s+/).map(p => p.toLowerCase()).filter(Boolean)
+    const keys = Object.keys(this.KEYWORD_CONFIG)
+    for (const part of parts) {
+      if (this.KEYWORD_CONFIG[part]) return part
+      for (const k of keys) if (part.startsWith(k)) return k
+    }
+    return undefined
+  }
+
+  findRanges(doc: vscode.TextDocument): { [k: string]: vscode.Range[] } {
+    const result: { [k: string]: vscode.Range[] } = {}
+    for (const { infoString, blockRange, iconRange } of this.getCodeBlocks(doc)) {
+      const match = this.findKeyword(infoString)
+      if (!match) continue
+
+      const cfg = this.KEYWORD_CONFIG[match]
+      if (cfg.color) result[`${match}-bg`] = [...(result[`${match}-bg`] || []), blockRange]
+      if (cfg.icon) result[`${match}-icon`] = [...(result[`${match}-icon`] || []), iconRange]
+    }
+    return result
+  }
+
+  private getCodeBlocks(doc: vscode.TextDocument): Array<{
+    infoString: string;
+    blockRange: vscode.Range;
+    iconRange: vscode.Range
+  }> {
+    const blocks: Array<{ infoString: string; blockRange: vscode.Range; iconRange: vscode.Range }> = []
+    const lineCount = doc.lineCount
+    let line = 0
+
+    while (line < lineCount) {
+      const startLineText = doc.lineAt(line).text.trim()
+
+      if (!startLineText.startsWith('```')) {
+        line++
+        continue
+      }
+
+      const infoString = startLineText.substring(3)
+      let endLine = line + 1
+
+      while (endLine < lineCount && !doc.lineAt(endLine).text.trim().startsWith('```')) endLine++
+      if (endLine < lineCount) {
+        const endText = doc.lineAt(endLine).text.trim()
+        blocks.push({
+          infoString,
+          blockRange: this.defineRange(line, 0, endLine, endText.length),
+          iconRange: this.defineRange(line, 0, line, 0)
+        })
+      }
+      line = endLine + 1
+    }
+    return blocks
+  }
+
   getDecorations(context: vscode.ExtensionContext): { [k: string]: vscode.TextEditorDecorationType } {
     const decorations: { [k: string]: vscode.TextEditorDecorationType } = {}
     const isDark = vscode.window.activeColorTheme.kind === vscode.ColorThemeKind.Dark
@@ -37,57 +101,6 @@ class CodeBlockDecorationsComponent extends DecorationComponent {
       }
     }
     return decorations
-  }
-
-  findRanges(doc: vscode.TextDocument): { [k: string]: vscode.Range[] } {
-    const result: { [k: string]: vscode.Range[] } = {}
-    const lineCount = doc.lineCount
-    let line = 0
-    while (line < lineCount) {
-      const textLine = doc.lineAt(line).text
-      if (textLine.trim().startsWith('```')) {
-        const infoString = textLine.trim().substring(3)
-        // Find the end of the code block
-        let endLine = line + 1
-        while (endLine < lineCount && !doc.lineAt(endLine).text.trim().startsWith('```')) {
-          endLine++
-        }
-        if (endLine < lineCount) {
-          const blockRange = new vscode.Range(
-            new vscode.Position(line, 0),
-            new vscode.Position(
-              endLine,
-              doc.lineAt(endLine).text.length
-            )
-          )
-          const iconRange = new vscode.Range(
-            new vscode.Position(line, 0),
-            new vscode.Position(line, 0)
-          )
-          const parts = infoString.split(/\s+/).filter(Boolean)
-          for (const part of parts) {
-            const key = part.toLowerCase()
-            const match = Object.keys(this.KEYWORD_CONFIG).find(
-              k => key === k || key.startsWith(k)
-            )
-            if (match) {
-              const cfg = this.KEYWORD_CONFIG[match]
-              result[`${match}-bg`] = cfg.color
-                ? [...(result[`${match}-bg`] || []), blockRange]
-                : result[`${match}-bg`]
-              result[`${match}-icon`] = cfg.icon
-                ? [...(result[`${match}-icon`] || []), iconRange]
-                : result[`${match}-icon`]
-              break
-            }
-          }
-        }
-        line = endLine + 1
-      } else {
-        line++
-      }
-    }
-    return result
   }
 }
 
