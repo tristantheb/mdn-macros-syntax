@@ -1,5 +1,34 @@
 # Changelog
 
+## [0.3.3](https://github.com/tristantheb/mdn-macros-syntax/compare/v0.3.2...v0.3.3) (2025-12-05)
+
+
+### Bug Fixes
+
+* **decoration:** interactive example with id not displayed as blue ([#47](https://github.com/tristantheb/mdn-macros-syntax/issues/47)) ([829633e](https://github.com/tristantheb/mdn-macros-syntax/commit/829633e60844d731ab6e1105d6c452ed5eb6e6b0))
+
+
+### Miscellaneous
+
+* **deps-dev:** bump @typescript-eslint/eslint-plugin from 8.47.0 to 8.48.1 ([#51](https://github.com/tristantheb/mdn-macros-syntax/issues/51)) ([dd27d3f](https://github.com/tristantheb/mdn-macros-syntax/commit/dd27d3f0c5ba47305d74d906e3a4c5ff1cc0861f))
+* **deps-dev:** bump @typescript-eslint/parser from 8.47.0 to 8.48.1 ([#52](https://github.com/tristantheb/mdn-macros-syntax/issues/52)) ([29ca66f](https://github.com/tristantheb/mdn-macros-syntax/commit/29ca66f05d8da38858a118131bc9f05897a08f46))
+* **deps-dev:** bump the development-dependencies group across 1 directory with 5 updates ([#35](https://github.com/tristantheb/mdn-macros-syntax/issues/35)) ([4e425a4](https://github.com/tristantheb/mdn-macros-syntax/commit/4e425a409d4a71302a740e04ed5255aa401b6434))
+* **deps-dev:** bump the development-dependencies group with 6 updates ([#42](https://github.com/tristantheb/mdn-macros-syntax/issues/42)) ([f149fae](https://github.com/tristantheb/mdn-macros-syntax/commit/f149fae3ebba042e61c23b88e056f567ee113dcf))
+* **deps:** bump actions/checkout from 6.0.0 to 6.0.1 ([#50](https://github.com/tristantheb/mdn-macros-syntax/issues/50)) ([0ebf463](https://github.com/tristantheb/mdn-macros-syntax/commit/0ebf463daa4a0c5768fd06744603e78db771b8e0))
+* **deps:** bump actions/setup-node from 6.0.0 to 6.1.0 ([#49](https://github.com/tristantheb/mdn-macros-syntax/issues/49)) ([daeae96](https://github.com/tristantheb/mdn-macros-syntax/commit/daeae9663d7d9d2da9640319de2f1719b3d87c91))
+* **deps:** bump github/codeql-action from 4.31.0 to 4.31.2 ([#34](https://github.com/tristantheb/mdn-macros-syntax/issues/34)) ([fdfef3e](https://github.com/tristantheb/mdn-macros-syntax/commit/fdfef3e0edc32241ee4ebb019efd95fe1e26aadc))
+* **deps:** bump github/codeql-action from 4.31.5 to 4.31.6 ([#46](https://github.com/tristantheb/mdn-macros-syntax/issues/46)) ([5d9b8a1](https://github.com/tristantheb/mdn-macros-syntax/commit/5d9b8a121d689fd4761b10e07b6e9628491e5653))
+* **deps:** bump glob from 10.4.5 to 10.5.0 ([#38](https://github.com/tristantheb/mdn-macros-syntax/issues/38)) ([08642c4](https://github.com/tristantheb/mdn-macros-syntax/commit/08642c422c8bda4603288056b83256e5852a6de6))
+* **deps:** bump js-yaml ([#37](https://github.com/tristantheb/mdn-macros-syntax/issues/37)) ([6788279](https://github.com/tristantheb/mdn-macros-syntax/commit/6788279ebe1cffe2a29f069095d90f3c6e4853ec))
+* **deps:** bump reviewdog/action-setup from 1.4.0 to 1.5.0 ([#40](https://github.com/tristantheb/mdn-macros-syntax/issues/40)) ([570897e](https://github.com/tristantheb/mdn-macros-syntax/commit/570897e88fad2340fa6aa97766c0099cd4e88c98))
+* **macros:** removing deprecated NonStandardBadge macro ([#43](https://github.com/tristantheb/mdn-macros-syntax/issues/43)) ([8c55fb3](https://github.com/tristantheb/mdn-macros-syntax/commit/8c55fb316e5c8375a623b2d1039ad536643e0247))
+
+
+### CI/CD changes
+
+* **dependabot:** ungroup npm update to permit security check ([#48](https://github.com/tristantheb/mdn-macros-syntax/issues/48)) ([d888205](https://github.com/tristantheb/mdn-macros-syntax/commit/d888205a4c3beb12b3a1c75793920bb1e75968d0))
+* **security:** lock ci with SHA commit ([#44](https://github.com/tristantheb/mdn-macros-syntax/issues/44)) ([c32074c](https://github.com/tristantheb/mdn-macros-syntax/commit/c32074cdb8af088c2f791b2b3713c467f229b750))
+
 ## [0.3.2](https://github.com/tristantheb/mdn-macros-syntax/compare/v0.3.1...v0.3.2) (2025-10-30)
 
 
