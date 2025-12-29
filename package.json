@@ -58,7 +58,7 @@
     "@types/vscode": "^1.106.1",
     "@typescript-eslint/eslint-plugin": "^8.48.1",
     "@typescript-eslint/parser": "^8.48.1",
-    "chai": "^6.2.1",
+    "chai": "^6.2.2",
     "eslint": "^9.39.1",
     "mocha": "^11.7.5",
     "mocha-junit-reporter": "^2.2.1",
