@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.3.4](https://github.com/tristantheb/mdn-macros-syntax/compare/v0.3.3...v0.3.4) (2026-01-13)
+
+
+### Miscellaneous
+
+* **deps:** bump actions/upload-artifact from 5.0.0 to 6.0.0 ([#54](https://github.com/tristantheb/mdn-macros-syntax/issues/54)) ([255aec8](https://github.com/tristantheb/mdn-macros-syntax/commit/255aec8e272b155d5f466302033b57bbb50b4dad))
+* **deps:** bump github/codeql-action from 4.31.6 to 4.31.9 ([#61](https://github.com/tristantheb/mdn-macros-syntax/issues/61)) ([8454e8c](https://github.com/tristantheb/mdn-macros-syntax/commit/8454e8ca2b4a246cceadf743c90e04de44db5cee))
+* **deps:** update internal depts of vscode 1.105.0 to 1.108.1 ([#76](https://github.com/tristantheb/mdn-macros-syntax/issues/76)) ([b20436f](https://github.com/tristantheb/mdn-macros-syntax/commit/b20436f56ad5cd2a935fd82bba61f56adf2a8b6a))
+
 ## [0.3.3](https://github.com/tristantheb/mdn-macros-syntax/compare/v0.3.2...v0.3.3) (2025-12-05)
 
 
