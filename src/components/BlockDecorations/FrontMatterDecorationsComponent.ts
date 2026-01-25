@@ -14,33 +14,32 @@ class FrontMatterDecorationsComponent extends DecorationComponent {
     }
   }
 
-  findRanges(doc: vscode.TextDocument): { [k: string]: vscode.Range[] } {
+  findRanges(document: vscode.TextDocument): { [k: string]: vscode.Range[] } {
     const result: { [k: string]: vscode.Range[] } = { 'frontmatter-bg': [] }
-    const lineCount = doc.lineCount
-    let line = 0
-    while (line < lineCount) {
-      const textLine = doc.lineAt(line).text.trim()
-      if (textLine === '---') {
-        // Find the end of the front matter block
-        let endLine = line + 1
-        while (endLine < lineCount && doc.lineAt(endLine).text.trim() !== '---') {
-          endLine++
-        }
-        if (endLine < lineCount) {
-          // Block includes both --- lines
-          const range = new vscode.Range(
-            new vscode.Position(line, 0),
-            new vscode.Position(
-              endLine,
-              doc.lineAt(endLine).text.length
-            )
+    const MAX_LINES = document.lineCount
+    const FIRST_LINE: number = 0
+
+    // Ensure front matter starts on first line
+    if (MAX_LINES === 0 || document.lineAt(FIRST_LINE).text.trim() !== '---')
+      return result
+
+    let endLine = FIRST_LINE + 1
+    while (true) {
+      // Find the end of the front matter block
+      if (endLine >= MAX_LINES) break
+      if (document.lineAt(endLine).text.trim() === '---') {
+        // Block includes both --- lines
+        const range = new vscode.Range(
+          new vscode.Position(FIRST_LINE, 0),
+          new vscode.Position(
+            endLine,
+            document.lineAt(endLine).text.length
           )
-          result['frontmatter-bg'].push(range)
-          line = endLine + 1
-          continue
-        }
+        )
+        result['frontmatter-bg'].push(range)
+        break
       }
-      line++
+      endLine++
     }
     return result
   }
