@@ -25,6 +25,10 @@ export class CodeLensProvider implements vscode.CodeLensProvider {
   public refresh() { this.onDidChangeEmitter.fire() }
 
   public async provideCodeLenses(document: vscode.TextDocument): Promise<vscode.CodeLens[]> {
+    if (
+      document.lineCount === 0 ||
+      document.lineAt(0).text.trim() !== '---'
+    ) return []
     const fsPath = document.uri.fsPath
     if (isEnUsPath(fsPath)) return []
 
@@ -73,9 +77,7 @@ export class CodeLensProvider implements vscode.CodeLensProvider {
 }
 
 const findFrontmatterRange = (document: vscode.TextDocument): FrontMatterRange | null => {
-  if (document.lineCount === 0) return null
-  if (document.lineAt(0).text.trim() !== '---') return null
-  for (let i = 1; i < Math.min(200, document.lineCount); i++) {
+  for (let i = 1; i < Math.min(10, document.lineCount); i++) {
     if (document.lineAt(i).text.trim() === '---') {
       return {
         start: new vscode.Position(0, 0),
