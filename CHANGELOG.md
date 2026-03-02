@@ -1,5 +1,29 @@
 # Changelog
 
+## [0.3.4](https://github.com/tristantheb/mdn-macros-syntax/compare/v0.3.3...v0.3.4) (2026-03-02)
+
+
+### Enhancements
+
+* **eol:** cleaning all eol from crlf to lf ([#81](https://github.com/tristantheb/mdn-macros-syntax/issues/81)) ([c3f0063](https://github.com/tristantheb/mdn-macros-syntax/commit/c3f00630e449c59dd4943b438c14acaa6d69ade1))
+* **frontmatter:** reduce frontmatter search to one ([#80](https://github.com/tristantheb/mdn-macros-syntax/issues/80)) ([ab869b9](https://github.com/tristantheb/mdn-macros-syntax/commit/ab869b9da0c6eccfbc4d2c796829a756a6e90f2a))
+
+
+### Bug Fixes
+
+* **deps:** dump dependencies for fix CVE-2026-27903 ([#109](https://github.com/tristantheb/mdn-macros-syntax/issues/109)) ([d919efb](https://github.com/tristantheb/mdn-macros-syntax/commit/d919efb4c8525a71e92ad6866f90408b992264a3))
+
+
+### Miscellaneous
+
+* **deps-dev:** bump @types/node from 24.10.7 to 25.0.9 ([#79](https://github.com/tristantheb/mdn-macros-syntax/issues/79)) ([1d0af05](https://github.com/tristantheb/mdn-macros-syntax/commit/1d0af0524947fc546212bd942af9cc98096e0ec1))
+* **deps:** bump actions/setup-node from 6.1.0 to 6.2.0 ([#78](https://github.com/tristantheb/mdn-macros-syntax/issues/78)) ([ae91c53](https://github.com/tristantheb/mdn-macros-syntax/commit/ae91c53ec37545514778e7e5a9ab76657465f45e))
+* **deps:** bump actions/upload-artifact from 5.0.0 to 6.0.0 ([#54](https://github.com/tristantheb/mdn-macros-syntax/issues/54)) ([255aec8](https://github.com/tristantheb/mdn-macros-syntax/commit/255aec8e272b155d5f466302033b57bbb50b4dad))
+* **deps:** bump github/codeql-action from 4.31.6 to 4.31.9 ([#61](https://github.com/tristantheb/mdn-macros-syntax/issues/61)) ([8454e8c](https://github.com/tristantheb/mdn-macros-syntax/commit/8454e8ca2b4a246cceadf743c90e04de44db5cee))
+* **deps:** bump github/codeql-action from 4.31.9 to 4.31.10 ([#77](https://github.com/tristantheb/mdn-macros-syntax/issues/77)) ([3fb513e](https://github.com/tristantheb/mdn-macros-syntax/commit/3fb513e9a4188d50e21753e6bca69428351fff79))
+* **deps:** update internal depts of vscode 1.105.0 to 1.108.1 ([#76](https://github.com/tristantheb/mdn-macros-syntax/issues/76)) ([b20436f](https://github.com/tristantheb/mdn-macros-syntax/commit/b20436f56ad5cd2a935fd82bba61f56adf2a8b6a))
+* **workdlows:** use ubuntu slim for small workflows ([#82](https://github.com/tristantheb/mdn-macros-syntax/issues/82)) ([39289ad](https://github.com/tristantheb/mdn-macros-syntax/commit/39289add10aecb44d9ed45f2bfa9c72a74a7288a))
+
 ## [0.3.3](https://github.com/tristantheb/mdn-macros-syntax/compare/v0.3.2...v0.3.3) (2025-12-05)
 
 
