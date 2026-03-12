@@ -8,7 +8,7 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
 const config = [
-  { ignores: ['out/', 'dist/', 'node_modules/'] },
+  { ignores: ['out/', 'node_modules/'] },
   {
     files: ['src/**/*.ts', 'src/**/*.tsx'],
     languageOptions: {
