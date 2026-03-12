@@ -1,5 +1,5 @@
 import * as vscode from 'vscode'
-import { makeMacroRegex } from '../../utils/constants'
+import { getMacroText, ENVIRONMENT_LOCALE } from '../../utils/constants'
 import { getKnownMacros } from '../../macros'
 
 class DeprecatedMarkerComponent {
@@ -25,16 +25,14 @@ class DeprecatedMarkerComponent {
     const update = (editor: vscode.TextEditor | undefined): void => {
       if (!editor) return
       const doc = editor.document
-      if (doc.languageId !== 'markdown' && doc.languageId !== 'mdn-macros') return
+      if (doc.languageId !== 'markdown') return
 
       const text = doc.getText()
-      const macroRegex = makeMacroRegex()
       const highlightRanges: vscode.Range[] = []
       const labelRanges: vscode.Range[] = []
       let match: RegExpExecArray | null
-      const locale = vscode.env.language || 'en'
-      const KNOWN = getKnownMacros(locale)
-      while ((match = macroRegex.exec(text)) !== null) {
+      const KNOWN = getKnownMacros(ENVIRONMENT_LOCALE)
+      while ((match = getMacroText(text)) !== null) {
         const name = match[1]
         const meta = KNOWN[name]
         if (meta && meta.deprecated) {
@@ -64,16 +62,14 @@ class DeprecatedMarkerComponent {
   update(editor: vscode.TextEditor | undefined): void {
     if (!editor) return
     const doc = editor.document
-    if (doc.languageId !== 'markdown' && doc.languageId !== 'mdn-macros') return
+    if (doc.languageId !== 'markdown') return
 
     const text = doc.getText()
-    const macroRegex = makeMacroRegex()
     const highlightRanges: vscode.Range[] = []
     const labelRanges: vscode.Range[] = []
     let match: RegExpExecArray | null
-    const locale = vscode.env.language || 'en'
-    const KNOWN = getKnownMacros(locale)
-    while ((match = macroRegex.exec(text)) !== null) {
+    const KNOWN = getKnownMacros(ENVIRONMENT_LOCALE)
+    while ((match = getMacroText(text)) !== null) {
       const name = match[1]
       const meta = KNOWN[name]
       if (meta && meta.deprecated) {

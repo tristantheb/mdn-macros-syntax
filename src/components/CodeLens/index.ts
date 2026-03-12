@@ -1,5 +1,6 @@
 import * as vscode from 'vscode'
 import { CodeLensProvider } from './CodeLensProvider'
+import { DOCUMENT_SELECTOR } from '../../utils/constants'
 
 type RefreshableProvider = vscode.CodeLensProvider & { refresh?: () => void }
 
@@ -30,7 +31,7 @@ const createCompositeProvider = (): { provider: vscode.CodeLensProvider; emitter
 
 const registerComposite = (context: vscode.ExtensionContext, provider: vscode.CodeLensProvider) => {
   compositeDisposable = vscode.languages.registerCodeLensProvider(
-    [{ language: 'markdown' }, { language: 'mdn-macros' }],
+    DOCUMENT_SELECTOR,
     provider
   )
   context.subscriptions.push(compositeDisposable)

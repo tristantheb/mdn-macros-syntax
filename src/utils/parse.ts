@@ -1,4 +1,4 @@
-import { makeMacroRegex } from './constants'
+import { getMacroText } from './constants'
 
 /**
  * Result of parsing a macro occurrence inside text.
@@ -71,10 +71,9 @@ const splitArgsPreserveEmpty = (rawArgs: string): string[] => {
  * and positions.
  */
 const parseMacroAtOffset = (text: string, offset: number): MacroParseResult | undefined => {
-  const macroRegex = makeMacroRegex()
   let match: RegExpExecArray | null
 
-  while ((match = macroRegex.exec(text)) !== null) {
+  while ((match = getMacroText(text)) !== null) {
     const start = match.index
     const end = match.index + match[0].length
     if (offset >= start && offset <= end) {

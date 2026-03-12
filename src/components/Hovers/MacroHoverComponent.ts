@@ -1,5 +1,6 @@
 import * as vscode from 'vscode'
 import { getKnownMacros } from '../../macros'
+import { ENVIRONMENT_LOCALE } from '../../utils/constants'
 import { parseMacroAtOffset } from '../../utils/parse'
 import type { MacroDefinition } from '../../types/macro'
 
@@ -8,8 +9,7 @@ export class MacroHoverComponent {
     const offset = document.offsetAt(position)
     const found = parseMacroAtOffset(document.getText(), offset)
     if (!found) return undefined
-    const locale = (vscode.env.language || 'en')
-    const KNOWN_MACROS = getKnownMacros(locale)
+    const KNOWN_MACROS = getKnownMacros(ENVIRONMENT_LOCALE)
     const info: MacroDefinition | undefined = KNOWN_MACROS[found.name]
     if (!info) return undefined
     const mdText = this.buildMarkdown(found, info)

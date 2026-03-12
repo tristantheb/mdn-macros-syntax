@@ -1,12 +1,11 @@
 import * as vscode from 'vscode'
 import { getKnownMacros } from '../../macros'
-import { makeMacroRegex } from '../../utils/constants'
+import { ENVIRONMENT_LOCALE, MACRO_REGEX } from '../../utils/constants'
 import { levenshtein } from '../../utils/levenshtein'
 
 class MacroDiagnosticComponent {
   private cachedKnownMacros: Record<string, unknown> | null = null
   private cachedKnownMacroNamesLower: string[] | null = null
-  private cachedMacroRegex: RegExp | null = null
 
   public activate(context: vscode.ExtensionContext, collection: vscode.DiagnosticCollection) {
     const refresh = (document: vscode.TextDocument) => {
@@ -30,7 +29,7 @@ class MacroDiagnosticComponent {
   }
 
   private isRelevant(document: vscode.TextDocument): boolean {
-    return document.languageId === 'mdn-macros' || document.languageId === 'markdown'
+    return document.languageId === 'markdown'
   }
 
   private findSuggestion(name: string, known: Record<string, unknown>): string {
@@ -80,14 +79,11 @@ class MacroDiagnosticComponent {
     if (!this.isRelevant(document)) return []
 
     const text = document.getText()
-    const locale = vscode.env.language || 'en'
-    if (!this.cachedKnownMacros) this.cachedKnownMacros = getKnownMacros(locale)
+    if (!this.cachedKnownMacros) this.cachedKnownMacros = getKnownMacros(ENVIRONMENT_LOCALE)
     const KNOWN_MACROS = this.cachedKnownMacros
-    if (!this.cachedMacroRegex) this.cachedMacroRegex = makeMacroRegex()
-    const macroRegex = this.cachedMacroRegex
 
     const diagnostics: vscode.Diagnostic[] = []
-    for (const match of text.matchAll(macroRegex)) {
+    for (const match of text.matchAll(MACRO_REGEX)) {
       const diag = this.makeDiagnosticForMatch(match as RegExpMatchArray, document, KNOWN_MACROS)
       if (diag) diagnostics.push(diag)
     }

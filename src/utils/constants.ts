@@ -1,12 +1,11 @@
-const MACRO_REGEX_SOURCE = '\\{\\{\\s*([A-Za-z0-9_\\-]+)(?:\\s*\\(([^}]*)\\))?\\s*\\}\\}'
+import * as vscode from 'vscode'
 
-const DOCUMENT_SELECTOR = ['mdn-macros', 'markdown']
+const DOCUMENT_SELECTOR = { scheme: 'file', language: 'markdown' }
+const ENVIRONMENT_LOCALE = vscode.env.language || 'en'
+const MACRO_REGEX = /\{\{\s*([A-Za-z0-9_\-]+)(?:\s*\(([^}]*)\))?\s*\}\}/g
 
-/**
- * Create a fresh RegExp instance for matching MDN macros.
- */
-const makeMacroRegex = (): RegExp => {
-  return new RegExp(MACRO_REGEX_SOURCE, 'g')
+const getMacroText = (text: string): RegExpExecArray | null => {
+  return MACRO_REGEX.exec(text)
 }
 
-export { DOCUMENT_SELECTOR, MACRO_REGEX_SOURCE, makeMacroRegex }
+export { DOCUMENT_SELECTOR, ENVIRONMENT_LOCALE, MACRO_REGEX, getMacroText }

@@ -59,7 +59,7 @@ class ActivationManager {
 
       this.context.subscriptions.push(
         vscode.languages.registerDocumentSemanticTokensProvider(
-          { language: 'markdown' },
+          DOCUMENT_SELECTOR,
           semanticProvider,
           semanticLegend
         )

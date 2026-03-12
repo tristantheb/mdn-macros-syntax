@@ -27,7 +27,7 @@ const activateAllDecorations = (context: ExtensionContext) => {
   const updateAllDecorations = (editor: TextEditor | undefined) => {
     if (!editor) return
     const doc = editor.document
-    if (doc.languageId !== 'markdown' && doc.languageId !== 'mdn-macros') return
+    if (doc.languageId !== 'markdown') return
 
     for (const decorator of decoratorInstances) {
       const ranges = decorator.findRanges(doc)
