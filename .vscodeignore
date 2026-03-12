@@ -1,0 +1,7 @@
+.github/
+docs/
+src/
+**/.gitignore
+**/.release-please-manifest.json
+**/release-please-config.json
+**/tsconfig.json
