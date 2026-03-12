@@ -2,47 +2,94 @@ import * as vscode from 'vscode'
 import { levenshtein } from '../utils/levenshtein'
 import { getKnownMacros } from '../macros'
 
-/**
- * Provide quick-fix code actions for unknown macro diagnostics
- */
+type BestMatchProps = {
+  name: string
+  dist: number
+}
+
+const NAME_REGEX = /\{\{\s*([A-Za-z0-9_\-]+)(?:\s*\(|\s*\}\})?/
+const KNOWN_MACROS = getKnownMacros(vscode.env.language || 'en')
+
+const findAllDiagnostics = (diags: readonly vscode.Diagnostic[]): vscode.Diagnostic[] => {
+  return diags.filter(
+    (d) => d.source === 'mdn-macros' && d.code === 'unknownMacro'
+  )
+}
+
+const matchWithMacro = (document: vscode.TextDocument, diagnostic: vscode.Diagnostic): {
+  nameIdx?: number,
+  unknownName?: string
+} | undefined => {
+  const text = document.getText(diagnostic.range)
+  const unknownName = NAME_REGEX.exec(text)?.[1]
+  const nameIdx = text.indexOf(unknownName || '')
+  return { nameIdx, unknownName }
+}
+
+const getBestMatch = (unknownName: string): BestMatchProps | null => {
+  let best: BestMatchProps | null = null
+  for (const k of Object.keys(KNOWN_MACROS)) {
+    const d = levenshtein(unknownName.toLowerCase(), k.toLowerCase())
+    if (!best || d < best.dist) best = { name: k, dist: d }
+  }
+  return best
+}
+
 const codeActionProvider: vscode.CodeActionProvider = {
   provideCodeActions(document: vscode.TextDocument, _range: vscode.Range, context: vscode.CodeActionContext) {
     const actions: vscode.CodeAction[] = []
-    const locale = vscode.env.language || 'en'
-    const KNOWN_MACROS = getKnownMacros(locale)
-    for (const diagnostic of context.diagnostics) {
-      if (diagnostic.source === 'mdn-macros' && diagnostic.code === 'unknownMacro') {
-        const diagText = document.getText(diagnostic.range)
-        // accept both {{Name(...)}} and {{Name}}
-        const nameMatch = /\{\{\s*([A-Za-z0-9_\-]+)(?:\s*\(|\s*\}\})?/.exec(diagText)
-        if (!nameMatch) continue
-        const unknownName = nameMatch[1]
+    const diagnostics = findAllDiagnostics(context.diagnostics)
 
-        let best: { name: string; dist: number } | null = null
-        for (const k of Object.keys(KNOWN_MACROS)) {
-          const d = levenshtein(unknownName.toLowerCase(), k.toLowerCase())
-          if (!best || d < best.dist) best = { name: k, dist: d }
+    if (diagnostics.length > 1) {
+      let allMatchs = []
+      for (const diagnostic of diagnostics) {
+        const { nameIdx, unknownName } = matchWithMacro(document, diagnostic) || {}
+        if (nameIdx === undefined || !unknownName) continue
+
+        let bestMatch = getBestMatch(unknownName)
+        if (bestMatch && bestMatch.dist <= Math.max(1, Math.floor(unknownName.length / 3))) {
+          allMatchs.push({ diagnostic, nameIdx, unknownName, bestMatch })
         }
+      }
+      const action = new vscode.CodeAction(`Replace ${allMatchs.length} macros`, vscode.CodeActionKind.QuickFix)
+      const we = new vscode.WorkspaceEdit()
+      for (const { diagnostic, nameIdx, unknownName, bestMatch } of allMatchs) {
+        const startOffset = document.offsetAt(diagnostic.range.start) + nameIdx
+        const editRange = new vscode.Range(
+          document.positionAt(startOffset),
+          document.positionAt(startOffset + unknownName.length)
+        )
+        we.replace(document.uri, editRange, bestMatch.name)
+        action.diagnostics = [...(action.diagnostics || []), diagnostic]
+      }
+      action.edit = we
+      action.isPreferred = true
+      actions.push(action)
+    } else if (diagnostics.length === 1) {
+      const diagnostic = diagnostics[0]
+      const { nameIdx, unknownName } = matchWithMacro(document, diagnostic) || {}
+      if (nameIdx === undefined || !unknownName) return actions
 
-        if (best && best.dist <= Math.max(1, Math.floor(unknownName.length / 3))) {
-          const action = new vscode.CodeAction(`Replace with '${best.name}'`, vscode.CodeActionKind.QuickFix)
+      let bestMatch = getBestMatch(unknownName)
+      if (bestMatch && bestMatch.dist <= Math.max(1, Math.floor(unknownName.length / 3))) {
+        const action = new vscode.CodeAction(`Replace with '${bestMatch.name}'`, vscode.CodeActionKind.QuickFix)
+        if (nameIdx >= 0) {
+          const startOffset = document.offsetAt(diagnostic.range.start) + nameIdx
+          const editRange = new vscode.Range(
+            document.positionAt(startOffset),
+            document.positionAt(startOffset + unknownName.length)
+          )
+          const we = new vscode.WorkspaceEdit()
+          we.replace(document.uri, editRange, bestMatch.name)
           action.diagnostics = [diagnostic]
-          const nameIdx = diagText.indexOf(unknownName)
-          if (nameIdx >= 0) {
-            const startOffset = document.offsetAt(diagnostic.range.start) + nameIdx
-            const editRange = new vscode.Range(
-              document.positionAt(startOffset),
-              document.positionAt(startOffset + unknownName.length)
-            )
-            const we = new vscode.WorkspaceEdit()
-            we.replace(document.uri, editRange, best.name)
-            action.edit = we
-            action.isPreferred = true
-            actions.push(action)
-          }
+          action.edit = we
+          action.isPreferred = true
+          actions.push(action)
         }
       }
     }
+
+    // 0, 1 or more results
     return actions
   }
 }
