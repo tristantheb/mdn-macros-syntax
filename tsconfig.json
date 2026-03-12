@@ -13,12 +13,9 @@
     "sourceMap": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "types": ["node", "vscode", "mocha"],
-    "baseUrl": ".",
-    "paths": {
-      "vscode": ["src/test/vscode.mock.ts"]
-    }
+    "types": ["node", "vscode"],
+    "baseUrl": "."
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules", ".vscode-test"]
+  "exclude": ["node_modules"]
 }
