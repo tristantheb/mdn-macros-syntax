@@ -21,8 +21,9 @@
   "activationEvents": [
     "workspaceContains:**/files/*/**/index.md"
   ],
+  "packageManager": "npm@11.6.2",
   "engines": {
-    "vscode": "^1.109.5"
+    "vscode": "^1.110.0"
   },
   "main": "./out/extension.js",
   "license": "MIT",
@@ -46,25 +47,16 @@
     "compile": "tsc -p ./",
     "lint": "eslint src --ext .ts",
     "lint:fix": "eslint src --ext .ts --fix",
-    "test": "mocha -r ts-node/register \"src/test/**/*.test.ts\" --exit",
-    "test:ci": "mocha -r ts-node/register -r tsconfig-paths/register \"src/test/**/*.test.ts\" --reporter mocha-junit-reporter --reporter-options mochaFile=mocha-report.xml",
+    "test": "jest",
     "watch": "tsc -watch -p ./"
   },
   "devDependencies": {
-    "@stylistic/eslint-plugin": "^5.9.0",
-    "@types/chai": "^5.2.3",
-    "@types/mocha": "^10.0.10",
-    "@types/node": "^25.3.3",
-    "@types/vscode": "^1.109.0",
-    "@typescript-eslint/eslint-plugin": "^8.56.1",
-    "@typescript-eslint/parser": "^8.56.1",
-    "chai": "^6.2.2",
-    "eslint": "^9.39.3",
-    "mocha": "^11.7.5",
-    "mocha-junit-reporter": "^2.2.1",
-    "ts-node": "^10.9.2",
-    "tsconfig-paths": "^4.2.0",
-    "tslint": "^6.1.3",
+    "@stylistic/eslint-plugin": "^5.10.0",
+    "@types/node": "^25.4.0",
+    "@types/vscode": "^1.110.0",
+    "@typescript-eslint/eslint-plugin": "^8.57.0",
+    "@typescript-eslint/parser": "^8.57.0",
+    "eslint": "^10.0.3",
     "typescript": "^5.9.3"
   }
 }
