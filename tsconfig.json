@@ -16,6 +16,6 @@
     "types": ["node", "vscode"],
     "baseUrl": "."
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*.ts", "src/**/*.json"],
   "exclude": ["node_modules"]
 }
