@@ -1,4 +1,5 @@
 import * as vscode from 'vscode'
+import { ENVIRONMENT_LOCALE } from '../utils/constants'
 import { levenshtein } from '../utils/levenshtein'
 import { getKnownMacros } from '../macros'
 
@@ -7,12 +8,12 @@ type BestMatchProps = {
   dist: number
 }
 
-const NAME_REGEX = /\{\{\s*([A-Za-z0-9_\-]+)(?:\s*\(|\s*\}\})?/
-const KNOWN_MACROS = getKnownMacros(vscode.env.language || 'en')
+const MACRO_NAME_REGEX = /\{\{\s*([A-Za-z0-9_\-]+)(?:\s*\(|\s*\}\})?/
+const KNOWN_MACROS = getKnownMacros(ENVIRONMENT_LOCALE)
 
 const findAllDiagnostics = (diags: readonly vscode.Diagnostic[]): vscode.Diagnostic[] => {
   return diags.filter(
-    (d) => d.source === 'mdn-macros' && d.code === 'unknownMacro'
+    (d) => d.code === 'unknownMacro'
   )
 }
 
@@ -21,7 +22,8 @@ const matchWithMacro = (document: vscode.TextDocument, diagnostic: vscode.Diagno
   unknownName?: string
 } | undefined => {
   const text = document.getText(diagnostic.range)
-  const unknownName = NAME_REGEX.exec(text)?.[1]
+  // accept both {{Name(...)}} and {{Name}}
+  const unknownName = MACRO_NAME_REGEX.exec(text)?.[1]
   const nameIdx = text.indexOf(unknownName || '')
   return { nameIdx, unknownName }
 }

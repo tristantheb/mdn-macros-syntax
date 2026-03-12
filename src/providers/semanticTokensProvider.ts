@@ -1,5 +1,5 @@
 import * as vscode from 'vscode'
-import { makeMacroRegex } from '../utils/constants'
+import { getMacroText } from '../utils/constants'
 
 /**
  * Semantic tokens legend for MDN macros.
@@ -45,9 +45,8 @@ const provider: vscode.DocumentSemanticTokensProvider = {
   provideDocumentSemanticTokens(document: vscode.TextDocument): vscode.ProviderResult<vscode.SemanticTokens> {
     const builder = new vscode.SemanticTokensBuilder(legend)
     const text = document.getText()
-    const macroRegex = makeMacroRegex()
     let match: RegExpExecArray | null
-    while ((match = macroRegex.exec(text)) !== null) {
+    while ((match = getMacroText(text)) !== null) {
       const fullStart = match.index
       const fullText = match[0]
       const name = match[1]

@@ -1,5 +1,6 @@
 import * as vscode from 'vscode'
 import { getKnownMacros } from '../macros'
+import { ENVIRONMENT_LOCALE } from '../utils/constants'
 import type { MacroDefinition } from '../types/macro'
 
 const shouldTriggerCompletion = (document: vscode.TextDocument, position: vscode.Position): boolean => {
@@ -47,8 +48,7 @@ const makeCompletionItem = (key: string, def: MacroDefinition, shouldAppendClosi
 const completionProvider: vscode.CompletionItemProvider = {
   provideCompletionItems(document: vscode.TextDocument, position: vscode.Position) {
     if (!shouldTriggerCompletion(document, position)) return []
-    const locale = (vscode.env.language || 'en')
-    const KNOWN_MACROS = getKnownMacros(locale)
+    const KNOWN_MACROS = getKnownMacros(ENVIRONMENT_LOCALE)
 
     const closingExistsStrict = hasClosingImmediately(document, position)
     const selectionHasClosing = selectionContainsClosing(document)
