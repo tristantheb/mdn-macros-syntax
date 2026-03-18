@@ -1,5 +1,30 @@
 # Changelog
 
+## [0.4.0](https://github.com/tristantheb/mdn-macros-syntax/compare/v0.3.4...v0.4.0) (2026-03-18)
+
+
+### Features
+
+* **actions:** replace all macros with 1 action ([#120](https://github.com/tristantheb/mdn-macros-syntax/issues/120)) ([233b3d7](https://github.com/tristantheb/mdn-macros-syntax/commit/233b3d71f7b063a963867fa17b7cf20bca4e181d))
+
+
+### Bug Fixes
+
+* **deps:** sync and fix security alerts from audit ([#127](https://github.com/tristantheb/mdn-macros-syntax/issues/127)) ([b28d7d8](https://github.com/tristantheb/mdn-macros-syntax/commit/b28d7d87ec5765bffc21c8257525edd211e8bbb6))
+* **vsce:** exclude typescript ([#122](https://github.com/tristantheb/mdn-macros-syntax/issues/122)) ([3d86790](https://github.com/tristantheb/mdn-macros-syntax/commit/3d86790713bd00ba0b0d2ac71356fe2ebc3903fa))
+
+
+### Miscellaneous
+
+* cleaning repeated code with global elements ([#123](https://github.com/tristantheb/mdn-macros-syntax/issues/123)) ([bbd0073](https://github.com/tristantheb/mdn-macros-syntax/commit/bbd00732a81785eea3c0f71c7355a4fc09021930))
+* **deps-dev:** bump @types/node from 25.4.0 to 25.5.0 ([#125](https://github.com/tristantheb/mdn-macros-syntax/issues/125)) ([24647c1](https://github.com/tristantheb/mdn-macros-syntax/commit/24647c1437f5f400b89f61f9f9fa7f75edd7e7f5))
+* **deps:** bump actions/checkout from 6.0.1 to 6.0.2 ([#85](https://github.com/tristantheb/mdn-macros-syntax/issues/85)) ([043face](https://github.com/tristantheb/mdn-macros-syntax/commit/043facee0a1b72ad33e8c9507ba1238ac11b4b02))
+* **deps:** bump actions/setup-node from 6.2.0 to 6.3.0 ([#113](https://github.com/tristantheb/mdn-macros-syntax/issues/113)) ([3606d84](https://github.com/tristantheb/mdn-macros-syntax/commit/3606d843a2881a0ea1052ac223ff3d313b9eb328))
+* **deps:** bump github/codeql-action from 4.31.10 to 4.32.6 ([#114](https://github.com/tristantheb/mdn-macros-syntax/issues/114)) ([d6672df](https://github.com/tristantheb/mdn-macros-syntax/commit/d6672dfab7f298494dd6f6ff78a85678a0f522ee))
+* **deps:** bump github/codeql-action from 4.32.6 to 4.33.0 ([#124](https://github.com/tristantheb/mdn-macros-syntax/issues/124)) ([47949be](https://github.com/tristantheb/mdn-macros-syntax/commit/47949be1b517eeb7eb68ab081b909c63abc9ad4a))
+* **deps:** removing mocha ([#119](https://github.com/tristantheb/mdn-macros-syntax/issues/119)) ([e13e6ba](https://github.com/tristantheb/mdn-macros-syntax/commit/e13e6bac89b03806aa54727a7cad79548a38f443))
+* updating markdown linting ([#118](https://github.com/tristantheb/mdn-macros-syntax/issues/118)) ([ed1d685](https://github.com/tristantheb/mdn-macros-syntax/commit/ed1d6850e0386429ad489027f37d4f073917fc42))
+
 ## [0.3.4](https://github.com/tristantheb/mdn-macros-syntax/compare/v0.3.3...v0.3.4) (2026-03-02)
 
 
