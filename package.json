@@ -54,7 +54,7 @@
     "@stylistic/eslint-plugin": "^5.10.0",
     "@types/node": "^25.5.0",
     "@types/vscode": "^1.110.0",
-    "@typescript-eslint/eslint-plugin": "^8.57.0",
+    "@typescript-eslint/eslint-plugin": "^8.58.1",
     "@typescript-eslint/parser": "^8.57.0",
     "eslint": "^10.0.3",
     "typescript": "^5.9.3"
