@@ -72,6 +72,5 @@
   "WebExtAllCompatTables": { "description": "Include compatibility tables for all WebExtension APIs.", "params": {} },
   "WebExtAllExamples": { "description": "Embed or link to all WebExtension examples.", "params": {} },
   "WebExtExamples": { "description": "Embed WebExtension-specific examples or code samples.", "params": { "exampleName": "Optional example identifier or name." } },
-  "XsltRef": { "description": "Render the XSLT sidebar navigation with selectable XSLT references.", "params": {} },
   "XsltSidebar": { "description": "Render the XSLT sidebar navigation.", "params": {} }
 }
