@@ -71,6 +71,5 @@
   "WebExtAllCompatTables": { "description": "包含所有 WebExtension API 的相容性表。", "params": {} },
   "WebExtAllExamples": { "description": "嵌入或連結所有 WebExtension 範例。", "params": {} },
   "WebExtExamples": { "description": "嵌入 WebExtension 專用的範例或程式碼片段。", "params": { "exampleName": "可選範例識別符或名稱。" } },
-  "XsltRef": { "description": "呈現包含可選 XSLT 參考的 XSLT 側邊欄。", "params": {} },
   "XsltSidebar": { "description": "呈現 XSLT 側邊欄。", "params": {} }
 }

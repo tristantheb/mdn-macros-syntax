@@ -71,6 +71,5 @@
   "WebExtAllCompatTables": { "description": "すべての WebExtension API の互換性表を含めます。", "params": {} },
   "WebExtAllExamples": { "description": "すべての WebExtension 例を埋め込むかリンクします。", "params": {} },
   "WebExtExamples": { "description": "WebExtension 固有の例やコードスニペットを埋め込みます。", "params": { "exampleName": "省略可能: 例の識別子や名前。" } },
-  "XsltRef": { "description": "選択可能な XSLT 参照を含む XSLT のサイドバーを表示します。", "params": {} },
   "XsltSidebar": { "description": "XSLT のサイドバーを表示します。", "params": {} }
 }

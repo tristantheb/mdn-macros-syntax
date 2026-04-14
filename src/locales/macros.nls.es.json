@@ -71,6 +71,5 @@
   "WebExtAllCompatTables": { "description": "Incluye tablas de compatibilidad para todas las APIs de WebExtension.", "params": {} },
   "WebExtAllExamples": { "description": "Inserta o enlaza todos los ejemplos de WebExtension.", "params": {} },
   "WebExtExamples": { "description": "Inserta ejemplos o fragmentos de código específicos de WebExtension.", "params": { "exampleName": "Identificador o nombre opcional del ejemplo." } },
-  "XsltRef": { "description": "Muestra la barra lateral de XSLT con referencias seleccionables.", "params": {} },
   "XsltSidebar": { "description": "Muestra la barra lateral de XSLT.", "params": {} }
 }
