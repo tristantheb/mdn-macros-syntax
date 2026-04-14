@@ -21,9 +21,9 @@
   "activationEvents": [
     "workspaceContains:**/files/*/**/index.md"
   ],
-  "packageManager": "npm@11.6.2",
+  "packageManager": "npm@11.9.0",
   "engines": {
-    "vscode": "^1.110.0"
+    "vscode": "^1.115.0"
   },
   "main": "./out/extension.js",
   "license": "MIT",
@@ -52,11 +52,11 @@
   },
   "devDependencies": {
     "@stylistic/eslint-plugin": "^5.10.0",
-    "@types/node": "^25.5.0",
-    "@types/vscode": "^1.110.0",
-    "@typescript-eslint/eslint-plugin": "^8.57.0",
-    "@typescript-eslint/parser": "^8.57.0",
-    "eslint": "^10.0.3",
+    "@types/node": "^25.6.0",
+    "@types/vscode": "^1.115.0",
+    "@typescript-eslint/eslint-plugin": "^8.58.2",
+    "@typescript-eslint/parser": "^8.58.2",
+    "eslint": "^10.2.0",
     "typescript": "^5.9.3"
   }
 }
