@@ -47,7 +47,6 @@
     "compile": "tsc -p ./",
     "lint": "eslint src --ext .ts",
     "lint:fix": "eslint src --ext .ts --fix",
-    "test": "jest",
     "watch": "tsc -watch -p ./"
   },
   "devDependencies": {
@@ -57,6 +56,6 @@
     "@typescript-eslint/eslint-plugin": "^8.58.2",
     "@typescript-eslint/parser": "^8.58.2",
     "eslint": "^10.2.0",
-    "typescript": "^5.9.3"
+    "typescript": "^6.0.2"
   }
 }

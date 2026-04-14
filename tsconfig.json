@@ -9,13 +9,11 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
-    "moduleResolution": "node",
     "sourceMap": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "types": ["node", "vscode"],
-    "baseUrl": "."
   },
-  "include": ["src/**/*.ts", "src/**/*.json"],
+  "include": ["./src/**/*.ts", "./src/**/*.json"],
   "exclude": ["node_modules"]
 }
