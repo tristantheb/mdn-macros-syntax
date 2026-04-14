@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.4.1](https://github.com/tristantheb/mdn-macros-syntax/compare/v0.4.0...v0.4.1) (2026-04-14)
+
+
+### Miscellaneous
+
+* **deps:** bump github/codeql-action from 4.33.0 to 4.35.1 ([#133](https://github.com/tristantheb/mdn-macros-syntax/issues/133)) ([c373a35](https://github.com/tristantheb/mdn-macros-syntax/commit/c373a356b226cd3538c97349ffe591a6997c9903))
+* **deps:** bump vscode `1.110.0` to `1.115.0` ([#147](https://github.com/tristantheb/mdn-macros-syntax/issues/147)) ([abdbe63](https://github.com/tristantheb/mdn-macros-syntax/commit/abdbe63e84e53c40a0e2e0d0bf6ccec65d494ecf))
+* **macro:** remove deprecated `XsltRef` macro ([#145](https://github.com/tristantheb/mdn-macros-syntax/issues/145)) ([a3a40de](https://github.com/tristantheb/mdn-macros-syntax/commit/a3a40ded943d317348d34ed2facebf2659d69576))
+
 ## [0.4.0](https://github.com/tristantheb/mdn-macros-syntax/compare/v0.3.4...v0.4.0) (2026-03-18)
 
 
