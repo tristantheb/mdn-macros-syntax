@@ -1,5 +1,28 @@
 # Changelog
 
+## [0.4.1](https://github.com/tristantheb/mdn-macros-syntax/compare/v0.4.0...v0.4.1) (2026-06-28)
+
+
+### Miscellaneous
+
+* **deps-dev:** bump @types/node from 25.6.0 to 25.6.2 ([#166](https://github.com/tristantheb/mdn-macros-syntax/issues/166)) ([b0d6e8f](https://github.com/tristantheb/mdn-macros-syntax/commit/b0d6e8f4c3ba027b876bacd17d00c13a409f5ae5))
+* **deps-dev:** bump @types/node from 25.6.2 to 25.9.1 ([#174](https://github.com/tristantheb/mdn-macros-syntax/issues/174)) ([ce4f263](https://github.com/tristantheb/mdn-macros-syntax/commit/ce4f2631b185529f32c1c793691983ad431a9a9a))
+* **deps-dev:** bump @typescript-eslint/eslint-plugin ([920c093](https://github.com/tristantheb/mdn-macros-syntax/commit/920c09333937a66be51948d8dfc37a084b8b8139))
+* **deps-dev:** bump @typescript-eslint/eslint-plugin from 8.58.2 to 8.59.3 ([#164](https://github.com/tristantheb/mdn-macros-syntax/issues/164)) ([920c093](https://github.com/tristantheb/mdn-macros-syntax/commit/920c09333937a66be51948d8dfc37a084b8b8139))
+* **deps-dev:** bump eslint from 10.2.0 to 10.3.0 ([#160](https://github.com/tristantheb/mdn-macros-syntax/issues/160)) ([1b7f471](https://github.com/tristantheb/mdn-macros-syntax/commit/1b7f4714a85390b0ff636b16eec7b747a2c23cb9))
+* **deps-dev:** bump eslint from 10.3.0 to 10.5.0 ([#184](https://github.com/tristantheb/mdn-macros-syntax/issues/184)) ([9c450d4](https://github.com/tristantheb/mdn-macros-syntax/commit/9c450d44f1ea590f0fc902baf9783cb842ff4ed2))
+* **deps-dev:** bump typescript from 6.0.2 to 6.0.3 ([#154](https://github.com/tristantheb/mdn-macros-syntax/issues/154)) ([def748c](https://github.com/tristantheb/mdn-macros-syntax/commit/def748c10a862de365ba68aaa32b8c82e5fd0d1b))
+* **deps:** bump actions/checkout from 6.0.2 to 7.0.0 ([#185](https://github.com/tristantheb/mdn-macros-syntax/issues/185)) ([1114f0c](https://github.com/tristantheb/mdn-macros-syntax/commit/1114f0cf866d1787548c05d65766dea59a77a7d5))
+* **deps:** bump actions/setup-node from 6.3.0 to 6.4.0 ([#149](https://github.com/tristantheb/mdn-macros-syntax/issues/149)) ([53ea0f1](https://github.com/tristantheb/mdn-macros-syntax/commit/53ea0f1e1c5aae3c7237d5460be2dbb322f244f7))
+* **deps:** bump github/codeql-action from 4.33.0 to 4.35.1 ([#133](https://github.com/tristantheb/mdn-macros-syntax/issues/133)) ([c373a35](https://github.com/tristantheb/mdn-macros-syntax/commit/c373a356b226cd3538c97349ffe591a6997c9903))
+* **deps:** bump github/codeql-action from 4.35.1 to 4.35.4 ([#163](https://github.com/tristantheb/mdn-macros-syntax/issues/163)) ([7768220](https://github.com/tristantheb/mdn-macros-syntax/commit/7768220c521bbdb90e60620c32fca7f38d95b939))
+* **deps:** bump github/codeql-action from 4.35.4 to 4.35.5 ([#167](https://github.com/tristantheb/mdn-macros-syntax/issues/167)) ([9718572](https://github.com/tristantheb/mdn-macros-syntax/commit/971857244802e4d108daeb5a15ca8708bbca253e))
+* **deps:** bump github/codeql-action from 4.35.5 to 4.36.0 ([#173](https://github.com/tristantheb/mdn-macros-syntax/issues/173)) ([52962a3](https://github.com/tristantheb/mdn-macros-syntax/commit/52962a342b01c2182335c4a4479277c231ddce5e))
+* **deps:** bump github/codeql-action from 4.36.0 to 4.36.2 ([#179](https://github.com/tristantheb/mdn-macros-syntax/issues/179)) ([1867ae2](https://github.com/tristantheb/mdn-macros-syntax/commit/1867ae2d74112a7fd27ba2850922af2f4fcb40fe))
+* **deps:** bump googleapis/release-please-action from 4.4.0 to 5.0.0 ([#155](https://github.com/tristantheb/mdn-macros-syntax/issues/155)) ([0e50b72](https://github.com/tristantheb/mdn-macros-syntax/commit/0e50b72373f8b72428bb504d670c2f4a60de09bd))
+* **deps:** bump vscode `1.110.0` to `1.115.0` ([#147](https://github.com/tristantheb/mdn-macros-syntax/issues/147)) ([abdbe63](https://github.com/tristantheb/mdn-macros-syntax/commit/abdbe63e84e53c40a0e2e0d0bf6ccec65d494ecf))
+* **macro:** remove deprecated `XsltRef` macro ([#145](https://github.com/tristantheb/mdn-macros-syntax/issues/145)) ([a3a40de](https://github.com/tristantheb/mdn-macros-syntax/commit/a3a40ded943d317348d34ed2facebf2659d69576))
+
 ## [0.4.0](https://github.com/tristantheb/mdn-macros-syntax/compare/v0.3.4...v0.4.0) (2026-03-18)
 
 
