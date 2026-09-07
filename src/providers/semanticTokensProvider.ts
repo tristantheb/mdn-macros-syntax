@@ -37,15 +37,32 @@ const parseArgsWithPositions = (argsRaw: string, absStart: number): Array<{
 }
 
 /**
+ * Retrieve the argument type and return the type name like an instanceof.
+ * @param {string} raw The raw text content to check.
+ *
+ * @returns {string} The type of the argument is string format.
+ */
+const getArgType = (raw: string): string => {
+  if ((raw.startsWith('"') && raw.endsWith('"')) || (raw.startsWith('\'') && raw.endsWith('\''))) {
+    return 'string'
+  } else if (/^\d+(?:\.\d+)?$/.test(raw)) {
+    return 'number'
+  } else if (raw === 'true' || raw === 'false') {
+    return 'boolean'
+  }
+  return 'parameter'
+}
+
+/**
  * Semantic tokens provider — mark macro names and argument tokens
  * (strings/numbers/booleans).
  */
 const provider: vscode.DocumentSemanticTokensProvider = {
   provideDocumentSemanticTokens(document: vscode.TextDocument): vscode.ProviderResult<vscode.SemanticTokens> {
     const builder = new vscode.SemanticTokensBuilder(legend)
-    const text = document.getText()
     let match: RegExpExecArray | null
-    while ((match = getMacroText(text)) !== null) {
+
+    while ((match = getMacroText(document.getText())) !== null) {
       const fullStart = match.index
       const fullText = match[0]
       const name = match[1]
@@ -66,16 +83,7 @@ const provider: vscode.DocumentSemanticTokensProvider = {
         if (raw.length === 0) continue
         const startPos = document.positionAt(a.start + a.text.indexOf(raw))
         const length = raw.length
-        let type = 'parameter'
-        const lower = raw.toLowerCase()
-        if ((raw.startsWith('"') && raw.endsWith('"')) || (raw.startsWith('\'') && raw.endsWith('\''))) {
-          type = 'string'
-        } else if (/^\d+(?:\.\d+)?$/.test(raw)) {
-          type = 'number'
-        } else if (lower === 'true' || lower === 'false') {
-          type = 'keyword'
-        }
-        builder.push(startPos.line, startPos.character, length, tokenTypeIndex(type), 0)
+        builder.push(startPos.line, startPos.character, length, tokenTypeIndex(getArgType(raw.toLowerCase())), 0)
       }
     }
     return builder.build()
