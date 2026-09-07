@@ -1,5 +1,5 @@
 import * as vscode from 'vscode'
-import { ENVIRONMENT_LOCALE } from '../utils/constants'
+import { ENVIRONMENT_LOCALE, MACRO_REGEX } from '../utils/constants'
 import { levenshtein } from '../utils/levenshtein'
 import { getKnownMacros } from '../macros'
 
@@ -8,7 +8,6 @@ type BestMatchProps = {
   dist: number
 }
 
-const MACRO_NAME_REGEX = /\{\{\s*([A-Za-z0-9_\-]+)(?:\s*\(|\s*\}\})?/
 const KNOWN_MACROS = getKnownMacros(ENVIRONMENT_LOCALE)
 
 const findAllDiagnostics = (diags: readonly vscode.Diagnostic[]): vscode.Diagnostic[] => {
@@ -23,7 +22,7 @@ const matchWithMacro = (document: vscode.TextDocument, diagnostic: vscode.Diagno
 } | undefined => {
   const text = document.getText(diagnostic.range)
   // accept both {{Name(...)}} and {{Name}}
-  const unknownName = MACRO_NAME_REGEX.exec(text)?.[1]
+  const unknownName = new RegExp(MACRO_REGEX.source).exec(text)?.[1]
   const nameIdx = text.indexOf(unknownName || '')
   return { nameIdx, unknownName }
 }

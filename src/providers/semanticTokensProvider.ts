@@ -17,8 +17,7 @@ const parseArgsWithPositions = (argsRaw: string, absStart: number): Array<{
   end: number
 }> => {
   const res: Array<{ text: string; start: number; end: number }> = []
-  let inSingle = false, inDouble = false
-  let argStart = 0
+  let inSingle = false, inDouble = false, argStart = 0
   for (let i = 0; i < argsRaw.length; i++) {
     const ch = argsRaw[i]
     if (ch === '\'' && !inDouble) { inSingle = !inSingle }
@@ -67,16 +66,16 @@ const provider: vscode.DocumentSemanticTokensProvider = {
         if (raw.length === 0) continue
         const startPos = document.positionAt(a.start + a.text.indexOf(raw))
         const length = raw.length
-        let ttype = 'parameter'
+        let type = 'parameter'
         const lower = raw.toLowerCase()
         if ((raw.startsWith('"') && raw.endsWith('"')) || (raw.startsWith('\'') && raw.endsWith('\''))) {
-          ttype = 'string'
+          type = 'string'
         } else if (/^\d+(?:\.\d+)?$/.test(raw)) {
-          ttype = 'number'
+          type = 'number'
         } else if (lower === 'true' || lower === 'false') {
-          ttype = 'keyword'
+          type = 'keyword'
         }
-        builder.push(startPos.line, startPos.character, length, tokenTypeIndex(ttype), 0)
+        builder.push(startPos.line, startPos.character, length, tokenTypeIndex(type), 0)
       }
     }
     return builder.build()
