@@ -1,4 +1,7 @@
 {
   "descriptionKey": "QuickLinksWithSubpages",
-  "deprecated": true
+  "deprecated": true,
+  "params": [
+    { "url": "url", "type": "string", "optional": true }
+  ]
 }

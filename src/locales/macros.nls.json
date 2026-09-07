@@ -55,7 +55,7 @@
   "PreviousMenuNext": { "description": "Combined previous/menu/next navigation widget.", "params": { "previousPage": "Optional previous page slug.", "overviewPage": "Optional overview page slug.", "nextPage": "Optional next page slug." } },
   "PreviousNext": { "description": "Insert previous/next navigation links.", "params": { "previousPage": "Optional previous page slug.", "nextPage": "Optional next page slug." } },
   "PWASidebar": { "description": "Render the Progressive Web App sidebar navigation.", "params": {} },
-  "QuickLinksWithSubpages": { "description": "Create quick links that include subpages.", "params": {} },
+  "QuickLinksWithSubpages": { "description": "Create quick links that include subpages.", "params": { "url": "An URL to a specific section that isn't below the current folder." } },
   "ReadOnlyInline": { "description": "Inline marker indicating the content is read-only.", "params": {} },
   "RFC": { "description": "Reference an RFC by number with optional section and label.", "params": { "number": "The RFC number to reference.", "displayText": "Optional display text to show instead of the canonical reference.", "section": "Optional section number inside the RFC." } },
   "SecureContext_Header": { "description": "Display a banner to mark a feature as only available on secure contexts.", "params": {} },
