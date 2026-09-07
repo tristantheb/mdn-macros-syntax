@@ -1,4 +1,3 @@
-import * as https from 'https'
 import { setTimeout as nodeSetTimeout } from 'timers'
 import { appendLine, LogLevel } from '../utils/output'
 
@@ -25,26 +24,20 @@ const parseShaFromBody = (body: string): string | undefined => {
   return undefined
 }
 
-const fetchOnce = (url: string): Promise<{ status?: number; body: string } | undefined> =>
-  new Promise(resolve => {
-    const headers: Record<string, string> = {
-      'User-Agent': 'mdn-macros-syntax',
-      Accept: 'application/vnd.github+json'
-    }
-
-    const opts: https.RequestOptions = { headers }
-    const req = https.get(url, opts, res => {
-      res.setEncoding('utf8')
-      let body = ''
-      res.on('data', d => (body += d))
-      res.on('end', () => resolve({ status: res.statusCode, body }))
+const fetchOnce = async (url: string): Promise<{ status?: number; body: string } | undefined> => {
+  try {
+    const response = await globalThis.fetch(url, {
+      headers: {
+        'User-Agent': 'mdn-macros-syntax',
+        Accept: 'application/vnd.github+json'
+      }
     })
-    req.on('error', err => {
-      appendLine(LogLevel.ERROR, `[versionProvider] fetchOnce error: ${String(err)}`)
-      resolve(undefined)
-    })
-    req.end()
-  })
+    return { status: response.status, body: await response.text() }
+  } catch (err) {
+    appendLine(LogLevel.ERROR, `[versionProvider] fetchOnce error: ${String(err)}`)
+    return undefined
+  }
+}
 
 const fetchWithRetries = async (url: string, attempts = 3): Promise<{ status?: number; body: string } | undefined> => {
   let wait = 150
