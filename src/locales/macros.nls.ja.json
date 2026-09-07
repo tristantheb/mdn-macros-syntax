@@ -18,7 +18,6 @@
   "EmbedLiveSample": { "description": "コンテンツにライブサンプルを埋め込みます。", "params": { "exampleTitle": "サンプルのタイトルまたは識別子。", "width": "省略可能: 幅（ピクセルまたは CSS 単位）。", "height": "省略可能: 高さ（ピクセルまたは CSS 単位）。" } },
   "EmbedYouTube": { "description": "YouTube ビデオをオプション付きで埋め込みます。", "params": { "youtubeVideoId": "YouTube ビデオの識別子 (ID)。" } },
   "Experimental_Inline": { "description": "実験的な機能を示すインラインマーカー。", "params": {} },
-  "ExperimentalBadge": { "description": "パラメータまたは機能が実験的であることを示すバッジ。", "params": {} },
   "Firefox_for_developers": { "description": "Firefox のリリースノートへのリンク一覧を生成します。", "params": {} },
   "Glossary": { "description": "用語のための用語集参照を作成します。", "params": { "term": "参照する用語。", "translationOrRename": "省略可能: 翻訳または名称変更ラベル。" } },
   "GlossaryDisambiguation": { "description": "曖昧さ解消のための下位用語一覧を提供します。", "params": {} },

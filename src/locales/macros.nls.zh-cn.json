@@ -18,7 +18,6 @@
   "EmbedLiveSample": { "description": "在内容中嵌入实时示例。", "params": { "exampleTitle": "示例标题或标识符。", "width": "可选宽度（像素或 CSS 单位）。", "height": "可选高度（像素或 CSS 单位）。" } },
   "EmbedYouTube": { "description": "嵌入带可选参数的 YouTube 视频。", "params": { "youtubeVideoId": "YouTube 视频标识符 (ID)。" } },
   "Experimental_Inline": { "description": "表示实验性功能的内联标记。", "params": {} },
-  "ExperimentalBadge": { "description": "指示参数或功能为实验性状态的标章。", "params": {} },
   "Firefox_for_developers": { "description": "生成指向 Firefox 发布说明的链接列表。", "params": {} },
   "Glossary": { "description": "为术语创建术语表引用。", "params": { "term": "要引用的术语。", "translationOrRename": "可选的已翻译或重命名标签。" } },
   "GlossaryDisambiguation": { "description": "提供用于消歧义的子术语列表。", "params": {} },

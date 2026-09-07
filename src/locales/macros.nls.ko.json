@@ -18,7 +18,6 @@
   "EmbedLiveSample": { "description": "컨텐츠에 라이브 샘플 예제를 삽입합니다.", "params": { "exampleTitle": "샘플의 제목 또는 식별자.", "width": "선택적 너비(픽셀 또는 CSS 단위).", "height": "선택적 높이(픽셀 또는 CSS 단위)." } },
   "EmbedYouTube": { "description": "옵션을 포함한 YouTube 비디오를 삽입합니다.", "params": { "youtubeVideoId": "YouTube 비디오 식별자(ID)." } },
   "Experimental_Inline": { "description": "실험적 기능을 표시하는 인라인 표시기입니다.", "params": {} },
-  "ExperimentalBadge": { "description": "매개변수 또는 기능이 실험적임을 나타내는 배지입니다.", "params": {} },
   "Firefox_for_developers": { "description": "Firefox 릴리스 노트로의 링크 목록을 생성합니다.", "params": {} },
   "Glossary": { "description": "용어에 대한 용어집 참조를 생성합니다.", "params": { "term": "참조할 용어.", "translationOrRename": "선택적 번역 또는 이름 변경 레이블." } },
   "GlossaryDisambiguation": { "description": "중복을 해소하기 위한 하위 용어 목록을 제공합니다.", "params": {} },

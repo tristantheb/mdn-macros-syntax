@@ -18,7 +18,6 @@
   "EmbedLiveSample": { "description": "在內容中嵌入即時範例。", "params": { "exampleTitle": "範例標題或識別符號。", "width": "可選寬度（像素或 CSS 單位）。", "height": "可選高度（像素或 CSS 單位）。" } },
   "EmbedYouTube": { "description": "嵌入帶有可選參數的 YouTube 影片。", "params": { "youtubeVideoId": "YouTube 影片識別碼 (ID)。" } },
   "Experimental_Inline": { "description": "表示實驗性功能的內嵌標記。", "params": {} },
-  "ExperimentalBadge": { "description": "指示參數或功能為實驗性狀態的徽章。", "params": {} },
   "Firefox_for_developers": { "description": "生成指向 Firefox 發行說明的連結清單。", "params": {} },
   "Glossary": { "description": "為術語建立術語表參考。", "params": { "term": "要參考的術語。", "translationOrRename": "可選的翻譯或重新命名標籤。" } },
   "GlossaryDisambiguation": { "description": "提供用於消歧義的子術語清單。", "params": {} },

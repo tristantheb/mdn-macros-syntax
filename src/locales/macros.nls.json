@@ -19,7 +19,6 @@
   "EmbedLiveSample": { "description": "Embed a live sample example into the content.", "params": { "exampleTitle": "Title or identifier of the live sample.", "width": "Optional width in pixels or CSS units.", "height": "Optional height in pixels or CSS units.", "deprecated_3": "Deprecated parameter (no longer used)", "deprecated_4": "Deprecated parameter (no longer used)", "deprecated_5": "Deprecated parameter (no longer used)", "allowed_features": "Optional list of allowed features for the live sample.", "sandbox": "Optional additional sandbox restrictions (\"allow-modals\", \"allow-forms\", \"allow-popups\")." } },
   "EmbedYouTube": { "description": "Embed a YouTube video with optional parameters.", "params": { "youtubeVideoId": "The YouTube video identifier (ID)." } },
   "Experimental_Inline": { "description": "Inline experimental feature marker.", "params": {} },
-  "ExperimentalBadge": { "description": "A badge indicating experimental status of a parameter or feature.", "params": {} },
   "Firefox_for_developers": { "description": "This macro generates a list of links to Firefox release notes.", "params": {} },
   "Glossary": { "description": "Create a glossary reference for a term.", "params": { "term": "The term to reference.", "translationOrRename": "Optional translated or renamed label." } },
   "GlossaryDisambiguation": { "description": "Provide a list of sub-terms for disambiguation.", "params": {} },

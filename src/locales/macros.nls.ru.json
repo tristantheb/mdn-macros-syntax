@@ -18,7 +18,6 @@
   "EmbedLiveSample": { "description": "Встраивает интерактивный пример в содержимое.", "params": { "exampleTitle": "Название или идентификатор примера.", "width": "Опциональная ширина.", "height": "Опциональная высота." } },
   "EmbedYouTube": { "description": "Встраивает видео YouTube с опциональными параметрами.", "params": { "youtubeVideoId": "Идентификатор видео YouTube (ID)." } },
   "Experimental_Inline": { "description": "Встроенный маркер для экспериментальных возможностей.", "params": {} },
-  "ExperimentalBadge": { "description": "Значок, указывающий, что параметр или функция экспериментальны.", "params": {} },
   "Firefox_for_developers": { "description": "Генерирует список ссылок на заметки о выпуске Firefox.", "params": {} },
   "Glossary": { "description": "Создаёт ссылку на глоссарий для термина.", "params": { "term": "Термин для ссылки.", "translationOrRename": "Необязательная переведённая или переименованная метка." } },
   "GlossaryDisambiguation": { "description": "Предоставляет список подтем для разрешения неоднозначностей.", "params": {} },

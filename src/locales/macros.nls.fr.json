@@ -18,7 +18,6 @@
   "EmbedLiveSample": { "description": "Intègre un exemple interactif dans le contenu.", "params": { "exampleTitle": "Titre ou identifiant de l'exemple live.", "width": "Largeur optionnelle en pixels ou unités CSS.", "height": "Hauteur optionnelle en pixels ou unités CSS." } },
   "EmbedYouTube": { "description": "Intègre une vidéo YouTube avec paramètres optionnels.", "params": { "youtubeVideoId": "Identifiant de la vidéo YouTube (ID)." } },
   "Experimental_Inline": { "description": "Marqueur inline pour fonctionnalité expérimentale.", "params": {} },
-  "ExperimentalBadge": { "description": "Badge indiquant le statut expérimental d'un paramètre ou d'une fonctionnalité.", "params": {} },
   "Firefox_for_developers": { "description": "Génère une liste de liens vers les notes de version de Firefox.", "params": {} },
   "Glossary": { "description": "Crée une référence de glossaire pour un terme.", "params": { "term": "Le terme à référencer.", "translationOrRename": "Étiquette traduite ou renommée optionnelle." } },
   "GlossaryDisambiguation": { "description": "Fournit une liste de sous-termes pour désambiguïsation.", "params": {} },
