@@ -1,6 +1,6 @@
 {
   "descriptionKey": "APIRef",
   "params": [
-    { "name": "apiName", "type": "string" }
+    { "name": "apiName", "type": "string", "optional": true }
   ]
 }
