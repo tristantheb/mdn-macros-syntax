@@ -1,3 +1,4 @@
 {
-  "descriptionKey": "Deprecated_Header"
+  "descriptionKey": "Deprecated_Header",
+  "deprecated": true
 }
