@@ -1,5 +1,21 @@
 # Changelog
 
+## [0.4.2](https://github.com/tristantheb/mdn-macros-syntax/compare/v0.4.1...v0.4.2) (2026-10-11)
+
+
+### Miscellaneous
+
+* **deps-dev:** bump @types/node from 26.5.0 to 26.6.4 ([#255](https://github.com/tristantheb/mdn-macros-syntax/issues/255)) ([3d2927d](https://github.com/tristantheb/mdn-macros-syntax/commit/3d2927da4e4cef6aadec2a01e3340a5f6c4a96c6))
+* **deps-dev:** bump the eslint group across 1 directory with 3 updates ([#251](https://github.com/tristantheb/mdn-macros-syntax/issues/251)) ([8cfe591](https://github.com/tristantheb/mdn-macros-syntax/commit/8cfe591a0db641145f4710f6728496957e632ae2))
+* **deps:** bump actions/setup-node from 7.0.0 to 7.1.0 ([#258](https://github.com/tristantheb/mdn-macros-syntax/issues/258)) ([ba097e9](https://github.com/tristantheb/mdn-macros-syntax/commit/ba097e9df5e8cbfa68eb15f1d5732615b022f2c5))
+* **deps:** bump node and npm version with all dependencies ([9012871](https://github.com/tristantheb/mdn-macros-syntax/commit/9012871a844e4d5329d8f152036da15e525f39c3))
+* **deps:** bump the codeql-action group across 1 directory with 2 updates ([#250](https://github.com/tristantheb/mdn-macros-syntax/issues/250)) ([8367b35](https://github.com/tristantheb/mdn-macros-syntax/commit/8367b35f1927835e81d755c198a4f24c8ae14144))
+
+
+### CI/CD changes
+
+* **dependabot:** set update interval to monday 8a.m ce(s)t ([98ac847](https://github.com/tristantheb/mdn-macros-syntax/commit/98ac847e2ac2068de07ff36f35d3840db742cb98))
+
 ## [0.4.1](https://github.com/tristantheb/mdn-macros-syntax/compare/v0.4.0...v0.4.1) (2026-09-07)
 
 
